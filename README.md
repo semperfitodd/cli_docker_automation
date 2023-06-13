@@ -18,7 +18,7 @@ CLI Docker Automation is a repository that contains a collection of scripts and 
 ## Getting Started
 1. Clone the repository
     ```bash
-    git clone https://github.com/yourusername/cli_docker_automation.git
+    git clone https://github.com/semperfitodd/cli_docker_automation.git
     cd cli_docker_automation
     ```
 2. Configure AWS CLI
