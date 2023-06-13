@@ -1,0 +1,28 @@
+version: 0.2
+
+env:
+  variables:
+    ENVIRONMENT: "cli-docker-automation"
+    TEST_FILES_DIR: "/test_files"
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+    commands:
+      - echo 'Installing stuff'
+      - sudo yum update -y
+
+  build:
+    commands:
+      - echo 'Testing Stuff'
+      - echo $TEST_FILES_DIR
+      - mkdir $TEST_FILES_DIR
+      - wget -P $TEST_FILES_DIR http://speedtest.tele2.net/10MB.zip
+      - wget -P $TEST_FILES_DIR http://speedtest.tele2.net/100MB.zip
+      - echo $ENVIRONMENT
+      - aws s3 sync $TEST_FILES_DIR s3://$ENVIRONMENT
+
+  post_build:
+    commands:
+      - test "$CODEBUILD_BUILD_SUCCEEDING" = "1"
