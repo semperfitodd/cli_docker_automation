@@ -45,10 +45,14 @@ CLI Docker Automation is a repository that contains a collection of scripts and 
     Note: You may need to customize variables in the setup script to match your requirements.
 5. Follow along with AWS Codebuild
     * Navigate to AWS Codebuild
+   
    ![codebuild.png](images%2Fcodebuild.png)
     * Select 'Tail Logs'
+   
    ![tail_logs.png](images%2Ftail_logs.png)
     * Success
+   
    ![codebuild_success.png](images%2Fcodebuild_success.png)
 6. Confirm in S3
+
    ![s3.png](images%2Fs3.png)
